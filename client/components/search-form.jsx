@@ -1,7 +1,7 @@
 import React from 'react';
 
-const apiId = '0e3da9a8';
-const apiKey = '931c76f72bf3477f440a0f37e67e6ddc';
+const apiId = process.env.REACT_APP_API_ID;
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export default class SearchForm extends React.Component {
   constructor(props) {
