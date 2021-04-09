@@ -30,7 +30,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG'])
+    new webpack.EnvironmentPlugin(['REACT_APP_API_KEY', 'REACT_APP_API_ID'])
   ],
   devtool: 'source-map',
   devServer: {
