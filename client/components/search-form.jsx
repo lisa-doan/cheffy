@@ -42,17 +42,19 @@ export default class SearchForm extends React.Component {
   render() {
     return (
       <>
-    <form onSubmit={this.handleSubmit}>
-      <input className="search-bar" type="search" value={this.state.value} onChange={this.handleChange} ></input>
-      <button className="search-button" type="submit"><i className="fa fa-search"></i></button>
-    </form>
-    <div className="button-container">
-    <button className="blue-button" value="breakfast" onClick={this.handleClick}>breakfast</button>
-    <button className="blue-button" value="lunch" onClick={this.handleClick}>lunch</button>
-    <button className="blue-button" value="dinner" onClick={this.handleClick}>dinner</button>
-    <button className="blue-button" value="dessert" onClick={this.handleClick}>dessert</button>
-    </div>
-    </>
+      <div className="search-bar-container">
+        <i className="fa fa-search search-icon"></i>
+        <form onSubmit={this.handleSubmit}>
+          <input className="search-box" type="search" placeholder="Search" value={this.state.value} onChange={this.handleChange} ></input>
+        </form>
+      </div>
+      <div className="button-container">
+        <button className="blue-button" value="breakfast" onClick={this.handleClick}>breakfast</button>
+        <button className="blue-button" value="lunch" onClick={this.handleClick}>lunch</button>
+        <button className="blue-button" value="dinner" onClick={this.handleClick}>dinner</button>
+        <button className="blue-button" value="dessert" onClick={this.handleClick}>dessert</button>
+      </div>
+      </>
     );
   }
 

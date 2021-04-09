@@ -48,30 +48,45 @@ a {
   padding: 0.5rem;
 }
 
-.search-container {
-  align-items: center;
-  text-align: center;
-}
-
 .row {
   display: flex;
 }
 
-.search-bar {
-  width: 250px;
-  height: 36px;
-  border: 0.5px solid #c4c4c4;
-  color: #c4c4c4;
-  cursor: pointer;
+.search-container {
+  align-items: center;
+  text-align: center;
+  margin: auto;
 }
 
-.search-button {
-  height: 35px;
-  background-color: #ee7f63;
-  border: solid #ee7f63 1px;
-  color: #fff;
+.search-bar-container {
+  display: flex;
+  border: .5px solid #c4c4c4;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 325px;
+  box-shadow: 2px 2px 2px #c4c4c4;
+  align-items: center;
+}
+
+.search-icon {
+  padding: 0.5rem;
+}
+
+.search-box {
+  border: none;
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
+  width: 290px;
   cursor: pointer;
-  font-size: 16px;
+   outline: none;
+}
+
+::placeholder {
+  color: #c4c4c4;
+}
+
+.button-container {
+  text-align: left;
+  margin-top: 0.75em;
 }
 
 .blue-button {
@@ -81,9 +96,4 @@ a {
   border: none;
   margin-right: 0.5em;
   cursor: pointer;
-}
-
-.button-container {
-  text-align: left;
-  margin-top: 0.5em;
 }
