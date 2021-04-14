@@ -64,13 +64,13 @@ export default class SearchForm extends React.Component {
         <h2><span className="underline">Results:</span></h2>
       </div>
       <div className="results-container">
-        {this.state.results.map(recipe => {
+        {this.state.results.map(result => {
           return (
+            <div key={result.recipe.uri.split('_')[1]} className="card-container">
           <RecipeCard
-            key={recipe.recipe.label}
-            title={recipe.recipe.label}
-            img={recipe.recipe.image}
+            result={result.recipe}
           />
+          </div>
           );
         })}
         </div>

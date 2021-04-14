@@ -1,15 +1,16 @@
 import React from 'react';
 
 export default function RecipeCard(props) {
+  const { label, image, uri } = props.result;
   return (
-    <div className="card-container">
+      <a href= {`#recipes?recipeId=${uri.split('_')[1]}`}>
       <div className="img-container">
-        <img src={props.img}></img>
+        <img src={image}></img>
       </div>
       <div className="title-container">
-        <h3>{props.title}</h3>
+        <h3>{label}</h3>
         <i className="fas fa-plus-circle add-icon"></i>
       </div>
-    </div>
+      </a>
   );
 }
