@@ -99,8 +99,15 @@ header {
 
 .search-container,
 .recipe-container {
-  max-width: 950px;
+  width: 950px;
   margin: auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .search-container,
+  .recipe-container {
+    width: 300px;
+  }
 }
 
 .search-bar-container {
