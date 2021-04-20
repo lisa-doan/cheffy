@@ -1,7 +1,7 @@
 import React from 'react';
-import AppDrawer from './components/app-drawer';
 import Search from './pages/search';
 import RecipeDetails from './pages/recipe-details';
+import Cookbook from './pages/cookbook';
 import parseRoute from './lib/parse-route';
 
 export default class App extends React.Component {
@@ -23,6 +23,9 @@ export default class App extends React.Component {
     if (route.path === '') {
       return <Search />;
     }
+    if (route.path === 'cookbook') {
+      return <Cookbook />;
+    }
     if (route.path === 'recipes') {
       const recipeId = route.params.get('recipeId');
       return <RecipeDetails recipeId={recipeId} />;
@@ -32,7 +35,6 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-    <AppDrawer />
     {this.renderPage()}
     </div>
     );

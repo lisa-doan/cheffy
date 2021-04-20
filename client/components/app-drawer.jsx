@@ -21,13 +21,13 @@ export default class AppDrawer extends React.Component {
       return (
       <div className="menu-container" onClick={this.closeMenu}>
         <div className="menu-content">
-          <h2>Cheffy</h2>
-          <a href="" onClick={this.handleClick}>Cookbook</a>
-          <a href=""onClick={this.handleClick}>Search</a>
-          <a href=""onClick={this.handleClick}>Meal Plan</a>
+          <h1>Cheffy</h1>
+          <a href="" onClick={this.handleClick}><h3>Search</h3></a>
+          <a href={'#cookbook'} onClick={this.handleClick}><h3>Cookbook</h3></a>
+          {/* <a href=""onClick={this.handleClick}>Meal Plan</a>
           <a href=""onClick={this.handleClick}>Shopping List</a>
           <a href=""onClick={this.handleClick}>Timer</a>
-          <a href=""onClick={this.handleClick}>Unit Conversion</a>
+          <a href=""onClick={this.handleClick}>Unit Conversion</a> */}
         </div>
       </div>
       );
