@@ -28,15 +28,17 @@ export default class SearchForm extends React.Component {
     } else {
       input = this.state.value;
     }
-    this.setState({
-      isLoading: true
-    });
     fetch(`https://api.edamam.com/search?app_id=${apiId}&app_key=${apiKey}&from=0&to=9&q=${input}`)
       .then(response => response.json())
       .then(data => {
-        this.setState({ results: data.hits });
+        this.setState({
+          results: data.hits,
+          isLoading: true
+        });
       })
       .catch(error => console.error(error));
+    this.setState({ value: '' });
+
   }
 
   render() {
@@ -77,5 +79,4 @@ export default class SearchForm extends React.Component {
       </>
     );
   }
-
 }
