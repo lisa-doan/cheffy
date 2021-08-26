@@ -25,9 +25,9 @@ export default class AppDrawer extends React.Component {
           <a href="" onClick={this.handleClick}><h3>Search</h3></a>
           <a href={'#cookbook'} onClick={this.handleClick}><h3>Cookbook</h3></a>
           {/* <a href=""onClick={this.handleClick}>Meal Plan</a>
-          <a href=""onClick={this.handleClick}>Shopping List</a>
-          <a href=""onClick={this.handleClick}>Timer</a>
-          <a href=""onClick={this.handleClick}>Unit Conversion</a> */}
+          <a href=""onClick={this.handleClick}>Shopping List</a> */}
+          {/* <a href="#timer"onClick={this.handleClick}>Timer</a> */}
+          {/* <a href=""onClick={this.handleClick}>Unit Conversion</a> */}
         </div>
       </div>
       );

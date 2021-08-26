@@ -28,7 +28,7 @@ export default class SearchForm extends React.Component {
     } else {
       input = this.state.value;
     }
-    fetch(`https://api.edamam.com/search?app_id=${apiId}&app_key=${apiKey}&from=0&to=9&q=${input}`)
+    fetch(`https://api.edamam.com/search?app_id=${apiId}&app_key=${apiKey}&from=0&to=3&q=${input}`)
       .then(response => response.json())
       .then(data => {
         this.setState({

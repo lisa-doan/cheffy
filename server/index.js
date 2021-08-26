@@ -5,7 +5,7 @@ const pg = require('pg');
 const app = express();
 const jsonMiddleware = express.json();
 const db = new pg.Pool({
-  connectionString: 'postgres://dev:dev@localhost/cheffy',
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }

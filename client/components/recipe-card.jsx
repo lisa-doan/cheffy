@@ -1,4 +1,5 @@
 import React from 'react';
+import RecipeDetails from '../components/recipe-details';
 
 export default class RecipeCard extends React.Component {
   constructor(props) {
@@ -44,7 +45,8 @@ export default class RecipeCard extends React.Component {
   }
 
   render() {
-    const { label, image, calories, totalNutrients, ingredientLines, url, source } = this.props.result;
+    const { label, image } = this.props.result;
+    const recipeDetails = this.props.result;
     if (this.state.isSaved) {
       return (
         <div className="modal-container">
@@ -59,55 +61,12 @@ export default class RecipeCard extends React.Component {
     }
     if (this.state.isClicked) {
       return (
-        // RecipeDetails
         <div className="modal-container">
           <div className="recipe-container">
             <div className="right">
               <i onClick={this.closeMenu} className="fas fa-times times-icon"></i>
             </div>
-          <div className="recipe-content">
-            <div className="img-container">
-              <img src={image}></img>
-            </div>
-            <h2><span className="underline">{label}</span></h2>
-            <div className="row">
-              <div className="row content">
-                  <div className="column">
-                    <div className="circle">{Math.ceil(calories)} kcal</div>
-                    </div>
-                  <div className="column">
-                    <span>Protein: {Math.ceil(totalNutrients.PROCNT.quantity) + totalNutrients.PROCNT.unit}</span>
-                    <span>Fat: {Math.ceil(totalNutrients.FAT.quantity) + totalNutrients.FAT.unit}</span>
-                    <span>Carbs: {Math.ceil(totalNutrients.CHOCDF.quantity) + totalNutrients.CHOCDF.unit}</span>
-                  </div>
-                </div>
-            </div>
-            <div className="ingredients-container">
-              <div className="column">
-                <div className="long-underline">
-                  <h3>Ingredients</h3>
-                </div>
-                <div className="content scrollbox">
-                  {ingredientLines.map((ingredient, index) => {
-                    return (
-                    <li key={index}>{ingredient}</li>
-                    );
-                  })}
-                  </div>
-                </div>
-                <div className="column">
-                  <div className="long-underline">
-                    <h3>Preparation</h3>
-                  </div>
-                  <div className="content">
-                    <a href={url} target="_blank" rel="noreferrer"><button className="blue-button">Instructions</button></a>
-                    <span className="content">
-                      on </span>
-                      <a href={url} target="_blank" rel="noreferrer"><u>{source}</u></a>
-                  </div>
-                </div>
-              </div>
-              </div>
+            <RecipeDetails recipeDetails={recipeDetails}/>
           </div>
         </div>
       );
