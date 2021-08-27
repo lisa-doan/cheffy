@@ -1,6 +1,6 @@
 import React from 'react';
 import AppDrawer from '../components/app-drawer';
-import RecipeDetail from '../components/recipe-detail';
+import RecipeDetails from '../components/recipe-details';
 
 const apiId = process.env.REACT_APP_API_ID;
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -45,11 +45,16 @@ export default class Recipe extends React.Component {
     const recipeDetails = this.state.recipe[0];
     return (
       <>
-      <AppDrawer />
-      <RecipeDetail recipeDetails = {recipeDetails}/>
+      <div className="menu">
+        <AppDrawer />
+      </div>
+
+      <header><h1>recipe</h1></header>
+      <RecipeDetails recipeDetails = {recipeDetails}/>
+
       <div className="button-container">
         <a href={'#cookbook'}>
-          <button className="large-red-button">Back to Cookbook</button>
+          <button className="large-red-button">back to cookbook</button>
         </a>
       </div>
       </>

@@ -8,10 +8,8 @@ export default function Search(props) {
     <div className="menu">
       <AppDrawer />
     </div>
-    <header><h1>Search Recipes</h1></header>
-    <div className="search-container">
-      <SearchForm />
-    </div>
+    <header><h1>search recipes</h1></header>
+    <SearchForm />
   </>
   );
 }

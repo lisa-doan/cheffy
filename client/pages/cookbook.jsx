@@ -67,10 +67,12 @@ export default class Cookbook extends React.Component {
             <div className="right">
               <i onClick={this.closeMenu} className="fas fa-times times-icon"></i>
             </div>
-            <p className="modal-message">Are you sure you want to delete this recipe?</p>
-            <a href={'#cookbook'}>
-              <button onClick={this.handleDelete}className="blue-button">YES</button>
-            </a>
+            <div className="column">
+              <p className="modal-message">are you sure you want to delete this recipe?</p>
+              <a href={'#cookbook'}>
+                <button onClick={this.handleDelete}className="blue-button">yes</button>
+              </a>
+            </div>
           </div>
         </div>
       );
@@ -80,30 +82,38 @@ export default class Cookbook extends React.Component {
       <div className="menu">
         <AppDrawer />
       </div>
-      <header><h1>Cookbook</h1></header>
-      <div className="recipe-container">
+
+      <header><h1>cookbook</h1></header>
+
+      <div className="container1">
           {recipes.map(item => (
           <div key={item.recipeId}>
-          <div className="row">
-            <div className="column-one-fourth">
-              <div className="img-container-small">
-                <a href= {`#recipes?recipeId=${item.uri.split('_')[1]}`}>
-                  <img src={item.image}></img>
-                </a>
-              </div>
-            </div>
-            <div className="column-three-fourth">
-              <div className="title-container">
-                <a href= {`#recipes?recipeId=${item.uri.split('_')[1]}`}>
-                  <div className="column">
-                      <h3>{item.label}</h3>
-                    <span className="content">{Math.floor(item.calories)} kcal</span>
+
+              <div className="col-half">
+
+                <div className="col-one-fourth">
+                  <div className="img-container">
+                    <a href= {`#recipes?recipeId=${item.uri.split('_')[1]}`}>
+                      <img src={item.image}></img>
+                    </a>
                   </div>
-                </a>
-                <i onClick={this.handleConfirm} id={item.recipeId} className="fas fa-times-circle delete-icon"></i>
+                </div>
+
+                <div className="title-container">
+                  <div className="column">
+                    <a href= {`#recipes?recipeId=${item.uri.split('_')[1]}`}>
+                      <h3>
+                        {item.label.length > 22 ? item.label.slice(0, 22).toLowerCase() + '...' : item.label.toLowerCase() }
+                      </h3>
+                    </a>
+                      <span className="content">{Math.floor(item.calories)} kcal</span>
+                  </div>
+
+                  <div className="column">
+                    <i onClick={this.handleConfirm} id={item.recipeId} className="fas fa-times-circle delete-icon"></i>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
           </div>)
           )}
       </div>
