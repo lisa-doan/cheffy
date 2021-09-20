@@ -54,7 +54,7 @@ export default class RecipeCard extends React.Component {
             <div className="right">
               <i onClick={this.closeMenu} className="fas fa-times times-icon"></i>
             </div>
-            <p className="modal-message">{label} is added to your cookbook!</p>
+            <p className="modal-message">{label.toLowerCase()} is added to your cookbook!</p>
           </div>
         </div>
       );
@@ -62,7 +62,7 @@ export default class RecipeCard extends React.Component {
     if (this.state.isClicked) {
       return (
         <div className="modal-container">
-          <div className="recipe-container">
+          <div className="modal-content">
             <div className="right">
               <i onClick={this.closeMenu} className="fas fa-times times-icon"></i>
             </div>
@@ -74,7 +74,7 @@ export default class RecipeCard extends React.Component {
     return (
       <>
        <div className="title-container">
-          <h3 onClick={this.handleClick}>{label}</h3>
+          <h3 onClick={this.handleClick}>{label.length > 27 ? label.slice(0, 27).toLowerCase() + '...' : label.toLowerCase()}</h3>
           <i onClick={this.handleSave} className="fas fa-plus-circle add-icon"></i>
       </div>
       <div className="img-container">

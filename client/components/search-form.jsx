@@ -28,7 +28,7 @@ export default class SearchForm extends React.Component {
     } else {
       input = this.state.value;
     }
-    fetch(`https://api.edamam.com/search?app_id=${apiId}&app_key=${apiKey}&from=0&to=3&q=${input}`)
+    fetch(`https://api.edamam.com/search?app_id=${apiId}&app_key=${apiKey}&from=0&to=9&q=${input}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -53,7 +53,7 @@ export default class SearchForm extends React.Component {
       <div className="search-content">
         <form className="search-bar-container" onSubmit={this.handleSubmit}>
           <i className="fa fa-search search-icon"></i>
-          <input className="search-box" type="search" placeholder="Search" value={this.state.value} onChange={this.handleChange} ></input>
+          <input className="search-box" type="search" placeholder="search" value={this.state.value} onChange={this.handleChange} ></input>
         </form>
         <div className="button-container">
           <button className="blue-button" value="breakfast" onClick={this.handleSubmit}>breakfast</button>
@@ -63,7 +63,7 @@ export default class SearchForm extends React.Component {
         </div>
       </div>
       <div className={display}>
-        <h2><span className="underline">Results:</span></h2>
+        <h2><span className="underline">results:</span></h2>
       </div>
       <div className="results-container">
         {this.state.results.map(result => {
