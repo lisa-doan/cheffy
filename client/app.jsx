@@ -2,6 +2,7 @@ import React from 'react';
 import Search from './pages/search';
 import Recipe from './pages/recipe';
 import Cookbook from './pages/cookbook';
+import Timer from './pages/timer';
 import parseRoute from './lib/parse-route';
 
 export default class App extends React.Component {
@@ -25,6 +26,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'cookbook') {
       return <Cookbook />;
+    }
+    if (route.path === 'timer') {
+      return <Timer />;
     }
     if (route.path === 'recipes') {
       const recipeId = route.params.get('recipeId');

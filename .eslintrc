@@ -4,6 +4,7 @@
     "node": true,
     "browser": true
   },
+  "parser": "babel-eslint",
   "extends": [
     "plugin:react/recommended",
     "eslint:recommended",
