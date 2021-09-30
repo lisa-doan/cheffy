@@ -1,5 +1,4 @@
 import React from 'react';
-import parseRoute from './lib/parse-route';
 import AppContext from './lib/app-context';
 import decodeToken from './lib/decode-token';
 import Search from './pages/search';
@@ -9,6 +8,7 @@ import Home from './pages/home';
 import Auth from './pages/auth';
 import NotFound from './pages/not-found';
 import PageContainer from './components/page-container';
+import parseRoute from './lib/parse-route';
 
 export default class App extends React.Component {
   constructor(props) {
