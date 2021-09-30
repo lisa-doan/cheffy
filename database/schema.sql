@@ -6,7 +6,7 @@ drop schema "public" cascade;
 
 create schema "public";
 
-create table "cookbook" (
+create table "public"."cookbook" (
   "recipeId"    serial,
   "uri"       text not null,
   "label"       text not null,
@@ -16,3 +16,12 @@ create table "cookbook" (
   "createdAt" timestamptz(6) not null default now(),
   primary key ("recipeId")
 );
+
+ create table "public"."users" (
+  "userId"             serial,
+  "username"           text              not null,
+  "hashedPassword"     text              not null,
+  "createdAt"      timestamptz(6) not null default now(),
+  primary key ("userId"),
+  unique ("username")
+ );

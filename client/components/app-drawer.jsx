@@ -1,4 +1,5 @@
 import React from 'react';
+import AppContext from '../lib/app-context';
 
 export default class AppDrawer extends React.Component {
   constructor(props) {
@@ -17,19 +18,17 @@ export default class AppDrawer extends React.Component {
   }
 
   render() {
+    const { handleSignOut } = this.context;
     if (this.state.isVisible) {
       return (
       <div className="menu-container" onClick={this.closeMenu}>
         <div className="menu-content">
 
           <h1>cheffy</h1>
-          <a href="" onClick={this.handleClick}><h3>search</h3></a>
+          <a href={'#search'} onClick={this.handleClick}><h3>search</h3></a>
           <a href={'#cookbook'} onClick={this.handleClick}><h3>cookbook</h3></a>
 
-          {/* <a href=""onClick={this.handleClick}>Meal Plan</a>
-          <a href=""onClick={this.handleClick}>Shopping List</a> */}
-          {/* <a href="#timer"onClick={this.handleClick}>Timer</a> */}
-          {/* <a href=""onClick={this.handleClick}>Unit Conversion</a> */}
+          <a href="" onClick={handleSignOut}><h3>sign out</h3></a>
 
         </div>
       </div>
@@ -43,3 +42,5 @@ export default class AppDrawer extends React.Component {
     }
   }
 }
+
+AppDrawer.contextType = AppContext;
