@@ -1,5 +1,7 @@
 import React from 'react';
 import AppDrawer from '../components/app-drawer';
+import AppContext from '../lib/app-context';
+import Redirect from '../components/redirect';
 
 export default class Cookbook extends React.Component {
   constructor(props) {
@@ -60,6 +62,8 @@ export default class Cookbook extends React.Component {
 
   render() {
     const recipes = this.state.results;
+    const { user } = this.context;
+    if (!user) return <Redirect to="sign-in" />;
     if (this.state.isConfirmClicked) {
       return (
         <div className="modal-container">
@@ -121,3 +125,4 @@ export default class Cookbook extends React.Component {
     );
   }
 }
+Cookbook.contextType = AppContext;
