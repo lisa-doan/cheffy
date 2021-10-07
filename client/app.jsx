@@ -1,7 +1,6 @@
 import React from 'react';
 import AppContext from './lib/app-context';
 import decodeToken from './lib/decode-token';
-import Search from './pages/search';
 import Recipe from './pages/recipe';
 import Cookbook from './pages/cookbook';
 import Home from './pages/home';
@@ -46,9 +45,6 @@ export default class App extends React.Component {
     const { route } = this.state;
     if (route.path === '') {
       return <Home />;
-    }
-    if (route.path === 'search') {
-      return <Search />;
     }
     if (route.path === 'cookbook') {
       return <Cookbook />;
