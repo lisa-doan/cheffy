@@ -25,7 +25,7 @@ export default class AppDrawer extends React.Component {
         <div className="menu-content">
 
           <h1>cheffy</h1>
-          <a href={'#search'} onClick={this.handleClick}><h3>search</h3></a>
+          <a href={'#'} onClick={this.handleClick}><h3>search</h3></a>
           <a href={'#cookbook'} onClick={this.handleClick}><h3>cookbook</h3></a>
 
           <a href="" onClick={handleSignOut}><h3>sign out</h3></a>
